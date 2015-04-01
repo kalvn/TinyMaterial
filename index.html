@@ -49,6 +49,18 @@
         .mm{
             margin: 15px;
         }
+        .mlm{
+            margin-left: 15px;
+        }
+        .mrm{
+            margin-right: 15px;
+        }
+        .mtm{
+            margin-top: 15px;
+        }
+        .mbm{
+            margin-bottom: 15px;
+        }
         .ml{
             margin: 40px;
         }
@@ -157,10 +169,54 @@
 
         <div id="popups">
             <h2>Popups</h1>
+            <div>
+                <p>
+                    You only need to target the popup into the button via <code>data-popup="#amazing-popup"</code> if your popup has the id <b>amazing-popup</b> for example.
+                </p>
+                <button class="btn-raised mrm" type="button" data-popup="#amazing-popup">Click on me!</button>
+                <div id="amazing-popup" class="popup">
+                    <div class="popup-header">This is my popup's content.</div>
+                    <div class="popup-body">
+                        <div class="popup-content">You can put some content.<br>Or even a list!</div>
+                        <div class="list">
+                            <a href="#!" class="list-item ripple-danger">One</a>
+                            <a href="#!" class="list-item ripple-success">Two</a>
+                            <a href="#!" class="list-item ripple-primary">Three</a>
+                            <a href="#!" class="list-item ripple-warning popup-close">Close</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-raised btn-info" type="button" data-popup='#list-popup'>List of options</button>
+                <div id="list-popup" class="popup">
+                    <div class="list">
+                        <a href="#!" class="list-item ripple-primary popup-close">Save</a>
+                        <a href="#!" class="list-item ripple-primary popup-close">Edit</a>
+                        <a href="#!" class="list-item ripple-primary popup-close">Quit</a>
+                        <a href="#!" class="list-item ripple-primary popup-close">Cancel</a>
+                    </div>
+                </div>
+
+                <pre>
+&lt;button class="btn-raised" type="button" data-popup="#amazing-popup"&gt;Click on me!&lt;/button&gt;
+&lt;div id="amazing-popup" class="popup"&gt;
+    &lt;div class="popup-header"&gt;This is my popup's content.&lt;/div&gt;
+    &lt;div class="popup-body"&gt;
+        &lt;div class="popup-content"&gt;You can put some content.&lt;br&gt;Or even a list!&lt;/div&gt;
+        &lt;div class="list"&gt;
+            &lt;a href="#!" class="list-item ripple-danger"&gt;One&lt;/a&gt;
+            &lt;a href="#!" class="list-item ripple-success"&gt;Two&lt;/a&gt;
+            &lt;a href="#!" class="list-item ripple-primary"&gt;Three&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
         </div>
 
         <div id="dialog">
             <h2>Dialogs</h1>
+            <p>Dialogs are modal blocks which appear on top of everything else.</p>
         </div>
 
         <div id="forms">

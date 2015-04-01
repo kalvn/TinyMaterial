@@ -1,38 +1,19 @@
 /* Popup */
 .popup{
+    @extend .shadow-1;
+
     display: none;
     position: absolute;
-    top: 48px;
-    right: 0px;
     min-width: 150px;
-    color: #333;
-    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
-    background: #fff;
-    line-height: 1.5;
-    cursor: default;
+    max-width: 500px;
     z-index: 50;
+
+    background-color: #fff;
 }
 .popup-header{
-    font-weight: bold;
-    background-color: #eee;
-    padding: 10px;
+    @extend .component-header;
+    padding: $spaceS;
 }
-.popup-body{
-    padding: 10px 0 10px 0;
-}
-.popup ul{
-    list-style: none;
-}
-.popup ul > li{
-    cursor: pointer;
-}
-.popup ul > li > a{
-    display: block;
-    padding: 5px 10px;
-}
-.popup ul > li > a:hover{
-    background-color: #eee;
-}
-.popup input[type=text]{
-    width: 100%;
+.popup-content{
+    padding: $spaceS;
 }

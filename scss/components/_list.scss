@@ -22,6 +22,11 @@
     &:last-child{
         border: none;
     }
+
+    // Lists inside popups are more dense.
+    .popup &{
+        padding: $spaceS;
+    }
 }
 
 a.list-item{
@@ -30,13 +35,13 @@ a.list-item{
 
     &:hover,
     &:focus{
-        background-color: darken(#fff, 5%);
+        background-color: darken(#fff, 8%);
         color: $colorText;
         text-decoration: none;
     }
 
     &:active{
-        background-color: darken(#fff, 10%);
+        background-color: darken(#fff, 16%);
         color: $colorText;
         text-decoration: none;
     }

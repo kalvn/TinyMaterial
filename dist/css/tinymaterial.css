@@ -47,14 +47,14 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.component-header, .card-header, .list-header {
+.component-header, .card-header, .list-header, .popup-header {
   padding: 15px;
   background-color: #fff;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px; }
 
-.shadow-1, .card, .list {
+.shadow-1, .card, .list, .popup {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .shadow-2 {
@@ -103,16 +103,18 @@ body {
   border-bottom: 1px solid #eee; }
   .list-item:last-child {
     border: none; }
+  .popup .list-item {
+    padding: 10px; }
 
 a.list-item {
   color: #333;
   text-decoration: none; }
   a.list-item:hover, a.list-item:focus {
-    background-color: #f2f2f2;
+    background-color: #ebebeb;
     color: #333;
     text-decoration: none; }
   a.list-item:active {
-    background-color: #e6e6e6;
+    background-color: #d6d6d6;
     color: #333;
     text-decoration: none; }
 
@@ -198,39 +200,16 @@ a.list-item {
 .popup {
   display: none;
   position: absolute;
-  top: 48px;
-  right: 0px;
   min-width: 150px;
-  color: #333;
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  line-height: 1.5;
-  cursor: default;
-  z-index: 50; }
+  max-width: 500px;
+  z-index: 50;
+  background-color: #fff; }
 
 .popup-header {
-  font-weight: bold;
-  background-color: #eee;
   padding: 10px; }
 
-.popup-body {
-  padding: 10px 0 10px 0; }
-
-.popup ul {
-  list-style: none; }
-
-.popup ul > li {
-  cursor: pointer; }
-
-.popup ul > li > a {
-  display: block;
-  padding: 5px 10px; }
-
-.popup ul > li > a:hover {
-  background-color: #eee; }
-
-.popup input[type=text] {
-  width: 100%; }
+.popup-content {
+  padding: 10px; }
 
 @-webkit-keyframes ripple-animation {
   from {
