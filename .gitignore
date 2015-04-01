@@ -1,0 +1,10 @@
+/vendor
+/cache
+/logs
+/assets/lib
+/db
+/node_modules
+.DS_STORE
+composer.lock
+*.sublime-workspace
+*.sublime-project

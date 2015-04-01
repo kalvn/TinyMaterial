@@ -1,0 +1,117 @@
+$paddingButton: 8px 16px;
+$heightButton: 36px;
+
+@mixin btn-color($color){
+    color: #fff;
+    background-color: $color;
+
+    &:hover,
+    &:focus{
+        background-color: darken($color, 5%);
+    }
+    &:active{
+        background-color: darken($color, 10%);
+    }
+}
+
+// Flat button used as a base for others.
+.btn-base{
+    @extend .nowrap;
+
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: $heightButton;
+    padding: $paddingButton;
+
+    border: none;
+    border-radius: $componentRadius;
+    outline: 0;
+
+    background-color: $colorTransparent;
+    
+    font-weight: bold;
+    font-size: 14px;
+    font-family: $fontStack; // Needed for Firefox.
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorText;
+    text-align: center;
+
+    cursor: pointer;
+
+    &[disabled]{
+        pointer-events: none;
+    }
+
+    &::-moz-focus-inner { 
+        border: 0;
+        padding: 0;
+    }
+}
+
+.btn{
+    @extend .btn-base;
+
+    &:hover,
+    &:focus{
+        background-color: rgba(153, 153, 153, 0.2);
+    }
+
+    &[disabled]{
+        &,
+        &:hover,
+        &:focus,
+        &:active{
+            color: rgba(#000, .26);
+            background-color: $colorTransparent;
+        }
+    }
+}
+
+// Raised buttons.
+.btn-raised{
+    @extend .btn-base;
+    @extend .shadow-btn;
+
+    background-color: rgba(#000, .12);
+    
+    &:hover,
+    &:focus{
+        @extend .shadow-btn-hover;
+    }
+
+    &:active{
+        box-shadow: none;
+    }
+
+    &[disabled]{
+        &,
+        &:hover,
+        &:focus,
+        &:active{
+            @extend .shadow-btn;
+
+            color: rgba(#000, .26);
+            background-color: rgba(#000, .12);
+        }
+    }
+}
+
+// Colored buttons.
+.btn-primary{
+    @include btn-color($colorPrimary);
+}
+.btn-danger{
+    @include btn-color($colorDanger);
+}
+.btn-info{
+    @include btn-color($colorInfo);
+}
+.btn-warning{
+    @include btn-color($colorWarning);
+}
+.btn-success{
+    @include btn-color($colorSuccess);
+}
+

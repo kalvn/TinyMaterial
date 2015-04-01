@@ -1,0 +1,43 @@
+.list{
+    @extend .shadow-1;
+}
+
+.list-header{
+    @extend .component-header;
+
+    border-bottom: 1px solid $lightGray;
+}
+
+.list-item{
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    padding: $spaceM;
+
+    background-color: #fff;
+
+    border-bottom: 1px solid $lightGray;
+
+    &:last-child{
+        border: none;
+    }
+}
+
+a.list-item{
+    color: $colorText;
+    text-decoration: none;
+
+    &:hover,
+    &:focus{
+        background-color: darken(#fff, 5%);
+        color: $colorText;
+        text-decoration: none;
+    }
+
+    &:active{
+        background-color: darken(#fff, 10%);
+        color: $colorText;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,26 @@
+.card{
+    background: #fff;
+    border-radius: $componentRadius;
+    @extend .shadow-1;
+
+    &-header{
+        border-bottom: 1px solid $lightGray;
+        @extend .component-header;
+    }
+
+    &-body{
+        padding: $spaceM;
+    }
+
+    &-footer{
+        border-top: 1px solid $lightGray;
+        background-color: $whiteGray;
+        padding: $spaceM;
+        overflow: hidden;
+
+        .btn-base{
+            float: right;
+            margin-left: $spaceS;
+        }
+    }
+}

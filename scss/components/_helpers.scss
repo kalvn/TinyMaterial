@@ -1,0 +1,15 @@
+.nowrap{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.component-header{
+    padding: $spaceM;
+
+    background-color: #fff;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}

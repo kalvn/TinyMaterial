@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tiny Material</title>
+        <style>
+        html{
+            background-color: #ececec;
+        }
+        body{
+            width: 1000px;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+        hr{
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 30px 0;
+        }
+        #buttons{
+            overflow: hidden;
+        }
+        #buttons .btn,
+        #buttons .btn-raised{
+            width: 120px;
+            margin: 10px;
+        }
+        #shadows{
+            overflow: hidden;
+            height: 350px;
+        }
+        #shadows > div{
+            padding: 50px 10px;
+        }
+        #shadows > div > div{
+            width: 150px;
+            height: 150px;
+            float: left;
+            margin-right: 30px;
+            background: #fff;
+        }
+        .pull-left{
+            float: left;
+        }
+        .pull-right{
+            float: right;
+        }
+        .mm{
+            margin: 15px;
+        }
+        .ml{
+            margin: 40px;
+        }
+        </style>
+        <link rel="stylesheet" type="text/css" href="dist/css/tinymaterial.min.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+        <h1>Tiny Material CSS</h1>
+
+        <div id="cards">
+            <h2>Card</h2>
+            <div class="card">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, quidem. Quidem iste ipsum quod sapiente mollitia facilis incidunt neque magnam magni quae eius beatae, at? Voluptatem velit veniam est. Alias.
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn-raised btn-primary">Button</button>
+                    <button type="button" class="btn ripple-primary">Button</button>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="buttons">
+            <h2>Buttons</h2>
+            <p>Be careful, if you want to completely disable links, you can only do it with javascript. And you have to remove and add listener each time you change its status.</p>
+            <div class="pull-left ml">
+                <h3>Flat</h3>
+                <button type="button" class="btn ripple-primary">Primary</button><br>
+                <button type="button" class="btn ripple-danger">Danger</button><br>
+                <button type="button" class="btn ripple-info">Info</button><br>
+                <button type="button" class="btn ripple-warning">Warning</button><br>
+                <button type="button" class="btn ripple-success">Success</button><br>
+                <button type="button" class="btn" disabled>Disabled</button>
+            </div>
+            <div class="pull-left ml">
+                <h3>Flat with color</h3>
+                <button type="button" class="btn btn-primary">Primary</button><br>
+                <button type="button" class="btn btn-danger">Danger</button><br>
+                <button type="button" class="btn btn-info">Info</button><br>
+                <button type="button" class="btn btn-warning">Warning</button><br>
+                <button type="button" class="btn btn-success">Success</button><br>
+                <button type="button" class="btn btn-primary" disabled>Disabled</button>
+            </div>
+            <div class="pull-left ml">
+                <h3>Raised with color</h3>
+                <button type="button" class="btn-raised ripple-primary">Raised</button><br>
+                <button type="button" class="btn-raised btn-primary">Primary</button><br>
+                <button type="button" class="btn-raised btn-danger">Danger</button><br>
+                <button type="button" class="btn-raised btn-info">Info</button><br>
+                <button type="button" class="btn-raised btn-warning">Warning</button><br>
+                <button type="button" class="btn-raised btn-success">Success</button><br>
+                <button type="button" class="btn-raised" disabled>Disabled</button>
+            </div>
+            <div class="pull-left ml">
+                <h3>With links</h3>
+                <a href="#!" type="button" class="btn-raised ripple-primary">Raised</a><br>
+                <a href="#!" type="button" class="btn-raised btn-primary">Primary</a><br>
+                <a href="#!" type="button" class="btn-raised btn-danger">Danger</a><br>
+                <a href="#!" type="button" class="btn-raised btn-info">Info</a><br>
+                <a href="#!" type="button" class="btn-raised btn-warning">Warning</a><br>
+                <a href="#!" type="button" class="btn-raised btn-success">Success</a><br>
+                <a href="#!" type="button" class="btn" disabled>disabled</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="shadows">
+            <h1>Shadows</h1>
+            <div>
+                <div class="shadow-1"></div>
+                <div class="shadow-2"></div>
+                <div class="shadow-3"></div>
+                <div class="shadow-4"></div>
+                <div class="shadow-5"></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="lists">
+            <h2>Lists</h2>
+
+            <div class="list">
+                <div class="list-header">List header</div>
+                <div class="list-item">This is a list item</div>
+                <div class="list-item">And another one</div>
+                <div class="list-item">And another one</div>
+                <a href="#!" class="list-item ripple-primary">With a link this time</a>
+                <a href="#!" class="list-item ripple-primary">And another link</a>
+                <a href="#!" class="list-item ripple-primary">
+                    <div class="pull-right">Even blocks!</div>
+                    <div>Inside a link, you can put whatever you want.</div>
+                    <div><button type="button" id="buttonInList" disabled class="btn-raised btn-success mm">But avoid other clickable elements...</button></div>
+                </a>
+                <div class="list-item">
+                    <a href="#!">This time the link is inside the list-item</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="popups">
+            <h2>Popups</h1>
+        </div>
+
+        <div id="dialog">
+            <h2>Dialogs</h1>
+        </div>
+
+        <div id="forms">
+            <h2>Forms</h1>
+        </div>
+    </body>
+    <script>
+    $('#buttonInList').on('click', function(){
+        alert('pwet');
+    });
+    </script>
+</html>

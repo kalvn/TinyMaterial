@@ -1,0 +1,64 @@
+@mixin ripple-color($color){
+    .ripple-effect{
+        background: $color;
+        animation: ripple-animation-intense 2s;
+    }
+}
+
+@keyframes ripple-animation {
+    from {
+        transform: scale(1);
+        opacity: 0.25;
+        visibility: visible;
+    }
+    to {
+        transform: scale(50);
+        opacity: 0;
+        visibility: visible;
+    }
+}
+
+@keyframes ripple-animation-intense {
+    from {
+        transform: scale(1);
+        opacity: 0.5;
+        visibility: visible;
+    }
+    to {
+        transform: scale(50);
+        opacity: 0;
+        visibility: visible;
+    }
+}
+
+.ripple-effect{
+    visibility: hidden;
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: white;
+
+    pointer-events: none;
+
+    animation: ripple-animation 2s;
+}
+
+.ripple{
+    @include ripple-color(#fff);
+}
+.ripple-primary{
+    @include ripple-color($colorPrimary);
+}
+.ripple-danger{
+    @include ripple-color($colorDanger);
+}
+.ripple-info{
+    @include ripple-color($colorInfo);
+}
+.ripple-warning{
+    @include ripple-color($colorWarning);
+}
+.ripple-success{
+    @include ripple-color($colorSuccess);
+}
