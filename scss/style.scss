@@ -1,10 +1,11 @@
 *{
     box-sizing: border-box;
 }
-body{
+html{
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
+    line-height: 1.5;
 }
 
 @import 'components/fonts';

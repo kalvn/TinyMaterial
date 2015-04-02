@@ -1,10 +1,11 @@
 * {
   box-sizing: border-box; }
 
-body {
+html {
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 400; }
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5; }
 
 @font-face {
   font-family: 'Roboto';
@@ -46,6 +47,10 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
+
+.small, label {
+  font-size: .8rem;
+  color: #999; }
 
 .component-header, .card-header, .list-header, .popup-header, .modal-header {
   padding: 15px;
@@ -218,17 +223,21 @@ a.list-item {
 
 @-webkit-keyframes modal-in {
   from {
-    top: 0; }
+    top: -20px;
+    opacity: 0; }
 
   to {
-    top: 30px; } }
+    top: 30px;
+    opacity: 1; } }
 
 @keyframes modal-in {
   from {
-    top: 0; }
+    top: -20px;
+    opacity: 0; }
 
   to {
-    top: 30px; } }
+    top: 30px;
+    opacity: 1; } }
 
 #modal-overlay {
   display: none;
@@ -237,7 +246,7 @@ a.list-item {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(242, 242, 242, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   z-index: 90; }
 
@@ -253,6 +262,45 @@ a.list-item {
   z-index: 100;
   -webkit-animation: modal-in .5s ease-out;
   animation: modal-in .5s ease-out; }
+
+.form-group {
+  position: relative;
+  margin-bottom: 15px; }
+
+.input-base, input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid #999;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  -webkit-transition: all .3s;
+  transition: all .3s; }
+  .input-base:focus, input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=time]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus {
+    border: 0;
+    border-bottom: 1px solid #009688;
+    box-shadow: 0 1px 0 0 #009688;
+    outline: none; }
+
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search] {
+  height: 3rem; }
+
+textarea {
+  resize: vertical;
+  -webkit-transition: height 0s;
+  transition: height 0s; }
+
+label {
+  display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s; }
+  label.active {
+    color: #009688; }
 
 @-webkit-keyframes ripple-animation {
   from {

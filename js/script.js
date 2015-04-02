@@ -95,8 +95,10 @@
                     overlay.appendTo($('body'));
                 }
 
-                overlay.fadeIn(100);
-                modal.fadeIn(100);
+                overlay.fadeIn(400);
+                setTimeout(function(){
+                    modal.show();
+                }, 250);
             }
         });
         $('[data-close]').on('click', function(){
@@ -105,6 +107,29 @@
             if(modal.length > 0){
                 $('#modal-overlay').fadeOut(200);
                 modal.fadeOut(200);
+            }
+        });
+
+        // Forms.
+        $('input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea').on('focus', function(){
+            var el = $(this);
+            var id = el.attr('id');
+
+            if(typeof id === 'string' && id !== ''){
+                var label = $('label[for=' + id + ']');
+                if(label.length > 0){
+                    label.addClass('active');
+                }
+            }
+        }).on('blur', function(){
+            var el = $(this);
+            var id = el.attr('id');
+
+            if(typeof id === 'string' && id !== ''){
+                var label = $('label[for=' + id + ']');
+                if(label.length > 0){
+                    label.removeClass('active');
+                }
             }
         });
     });

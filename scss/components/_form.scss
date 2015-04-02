@@ -1,0 +1,65 @@
+.form-group{
+    position: relative;
+    margin-bottom: $spaceM;
+}
+
+.input-base{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+
+    background: $colorTransparent;
+    border: none;
+    border-bottom: 1px solid $mediumGray;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+
+    font-size: 1rem;
+    font-family: $fontStack;
+
+    transition: all .3s;
+
+    &:focus{
+        border: 0;
+        border-bottom: 1px solid $colorForm;
+        box-shadow: 0 1px 0 0 $colorForm;
+        outline: none;
+    }
+}
+
+input{
+    &[type=text], 
+    &[type=password], 
+    &[type=email], 
+    &[type=url], 
+    &[type=time], 
+    &[type=date], 
+    &[type=datetime-local], 
+    &[type=tel], 
+    &[type=number], 
+    &[type=search]{
+        @extend .input-base;
+
+        height: 3rem;
+    }
+}
+
+textarea{
+    @extend .input-base;
+
+    resize: vertical;
+    transition: height 0s; 
+}
+
+label{
+    @extend .small;
+    
+    display: block;
+
+    transition: all .3s;
+
+    &.active{
+        color: $colorForm;
+    }
+}

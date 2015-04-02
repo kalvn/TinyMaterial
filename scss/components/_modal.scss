@@ -1,9 +1,11 @@
 @keyframes modal-in {
     from {
-        top: 0;
+        top: -20px;
+        opacity: 0;
     }
     to {
         top: 30px;
+        opacity: 1;
     }
 }
 
@@ -14,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba($whiteGray, .8);
+    background-color: rgba(#000, .5);
     overflow: hidden;
     z-index: 90;
 }
