@@ -13,3 +13,17 @@
     font-weight: bold;
     font-size: 14px;
 }
+
+.component-body{
+    padding: $spaceM;
+}
+
+.component-footer{
+    padding: $spaceM;
+    overflow: hidden;
+
+    .btn-base{
+        float: right;
+        margin-left: $spaceS;
+    }
+}

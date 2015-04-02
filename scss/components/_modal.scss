@@ -1,0 +1,48 @@
+@keyframes modal-in {
+    from {
+        top: 0;
+    }
+    to {
+        top: 30px;
+    }
+}
+
+#modal-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($whiteGray, .8);
+    overflow: hidden;
+    z-index: 90;
+}
+
+.modal{
+    @extend .shadow-3;
+
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    margin-left: -250px;
+    width: 500px;
+
+    background-color: #fff;
+    border-radius: $componentRadius;
+
+    z-index: 100;
+
+    animation: modal-in .5s ease-out;
+
+    &-header{
+        @extend .component-header;
+    }
+    &-body{
+        @extend .component-body;
+    }
+    &-footer{
+        @extend .component-footer;
+    }
+}

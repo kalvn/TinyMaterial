@@ -13,14 +13,9 @@
     }
 
     &-footer{
+        @extend .component-footer;
+
         border-top: 1px solid $lightGray;
         background-color: $whiteGray;
-        padding: $spaceM;
-        overflow: hidden;
-
-        .btn-base{
-            float: right;
-            margin-left: $spaceS;
-        }
     }
 }

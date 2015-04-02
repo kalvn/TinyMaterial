@@ -167,7 +167,7 @@
             </div>
         </div>
 
-        <div id="popups">
+        <div id="popups" style="position:relative;">
             <h2>Popups</h1>
             <div>
                 <p>
@@ -214,9 +214,20 @@
             </div>
         </div>
 
-        <div id="dialog">
-            <h2>Dialogs</h1>
-            <p>Dialogs are modal blocks which appear on top of everything else.</p>
+        <div id="modal">
+            <h2>Modals</h1>
+            <p>Modals are elements which appear on top of everything else.</p>
+            <div>
+                <button class="btn-raised btn-primary mrm" type="button" data-modal="#amazing-modal">Open a modal window</button>
+                <div id="amazing-modal" class="modal">
+                    <div class="modal-header">Modal header</div>
+                    <div class="modal-body">This is my body.</div>
+                    <div class="modal-footer">
+                        <button class="btn ripple-primary" type="button" data-close="#amazing-modal">Save</button>
+                        <button class="btn" type="button" data-close="#amazing-modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="forms">
