@@ -1,4 +1,6 @@
 .card{
+    position: relative;
+
     background: #fff;
     border-radius: $component-radius;
     @extend .shadow-1;
@@ -6,6 +8,7 @@
     &-header{
         border-bottom: 1px solid $color-component-inner-border;
         @extend .component-header;
+        @extend .nowrap;
     }
 
     &-body{
@@ -14,8 +17,42 @@
 
     &-footer{
         @extend .component-footer;
+        @extend .nowrap;
 
         border-top: 1px solid $color-component-inner-border;
         background-color: $color-component-footer;
+    }
+}
+
+.card-side{
+    @extend .card;
+
+    display: table;
+    width: 100%;
+
+    .card-middle{
+        position: relative;
+    }
+
+    .card-left,
+    .card-middle,
+    .card-right{
+        display: table-cell;
+        vertical-align: top;
+
+        @media #{$media-xs-sm}{
+            display: table-row;
+        }
+
+        & img{
+            display: block;
+        }
+    }
+
+    .card-footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 }

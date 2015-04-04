@@ -31,8 +31,8 @@ $color-form-active: color("teal", "base");
 
 $color-form-border: color("grey", "lighten-2");
 $color-form-background: color("shades", "transparent");
-$color-form-disabled-border: color("grey", "lighten-3");
-$color-form-disabled: color("grey", "lighten-3");
+$color-form-disabled-border: color("grey", "lighten-2");
+$color-form-disabled: color("grey", "lighten-2");
 $color-form-placeholder: color("grey", "lighten-1");
 
 // Buttons.
@@ -54,3 +54,15 @@ $switch-bg-color: $color-form-active !default;
 $switch-checked-lever-bg: desaturate(lighten($color-form-active, 25%), 50%) !default;
 $switch-unchecked-bg: #F1F1F1 !default;
 $switch-unchecked-lever-bg: #818181 !default;
+
+
+// Media queries
+$width-xs-min: 0px;
+$width-xs-max: 767px;
+$width-sm-min: 768px;
+$width-sm-max: 991px;
+$width-md-min: 992px;
+$width-md-max: 1199px;
+$width-lg-min: 1200px;
+
+$media-xs-sm: "(max-width: " + $width-sm-max + ")";

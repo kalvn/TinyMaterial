@@ -5,38 +5,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tiny Material</title>
         <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="lib/highlight/styles/zenburn.css">
         <style>
         html{
             background-color: #ececec;
             font-size: 15px;
+            margin: 0;
+            padding: 0;
         }
         body{
             background-color: #ececec;
-            width: 1000px;
-            margin: auto;
             margin-bottom: 50px;
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            padding: 20px 0;
+        }
+        section:nth-child(odd){
+            background-color: #d9d9d9;
         }
         hr{
             border: none;
             border-top: 1px solid #ddd;
             margin: 30px 0;
         }
+        #intro{
+            background-color: #009688;
+            color: #fff;
+            box-shadow: 0 2px 15px #999;
+        }
+        #intro a{
+            color: #fff;
+        }
+        #cards .card,
+        #cards .card-side{
+            margin-bottom: 20px;
+        }
         #buttons{
             overflow: hidden;
         }
         #buttons .btn,
-        #buttons .btn-raised{
+        #buttons .btn-raised,
+        #ripples .btn,
+        #ripples .btn-raised{
             width: 120px;
             margin: 10px;
         }
-        #shadows{
-            overflow: hidden;
-            height: 350px;
+        #shadows .row:nth-child(2){
+            padding-bottom: 70px;
         }
-        #shadows > div{
-            padding: 50px 10px;
+        #container-shadows{
+            margin-bottom: 70px;
         }
-        #shadows > div > div{
+        #container-shadows div{
             width: 150px;
             height: 150px;
             float: left;
@@ -79,138 +101,232 @@
         </style>
         <link rel="stylesheet" type="text/css" href="dist/css/tinymaterial.min.css">
         <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="lib/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
         <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body>
-        <h1>Tiny Material CSS</h1>
-
-        <div id="cards">
-            <h2>Card</h2>
-            <div class="card">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, quidem. Quidem iste ipsum quod sapiente mollitia facilis incidunt neque magnam magni quae eius beatae, at? Voluptatem velit veniam est. Alias.
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn-raised btn-primary">Button</button>
-                    <button type="button" class="btn ripple-primary">Button</button>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <div id="buttons">
-            <h2>Buttons</h2>
-            <p>Be careful, if you want to completely disable links, you can only do it with javascript. And you have to remove and add listener each time you change its status.</p>
-            <div class="pull-left ml">
-                <h3>Flat</h3>
-                <button type="button" class="btn ripple-primary">Primary</button><br>
-                <button type="button" class="btn ripple-danger">Danger</button><br>
-                <button type="button" class="btn ripple-info">Info</button><br>
-                <button type="button" class="btn ripple-warning">Warning</button><br>
-                <button type="button" class="btn ripple-success">Success</button><br>
-                <button type="button" class="btn" disabled>Disabled</button>
-            </div>
-            <div class="pull-left ml">
-                <h3>Flat with color</h3>
-                <button type="button" class="btn btn-primary">Primary</button><br>
-                <button type="button" class="btn btn-danger">Danger</button><br>
-                <button type="button" class="btn btn-info">Info</button><br>
-                <button type="button" class="btn btn-warning">Warning</button><br>
-                <button type="button" class="btn btn-success">Success</button><br>
-                <button type="button" class="btn btn-primary" disabled>Disabled</button>
-            </div>
-            <div class="pull-left ml">
-                <h3>Raised with color</h3>
-                <button type="button" class="btn-raised ripple-primary">Raised</button><br>
-                <button type="button" class="btn-raised btn-primary">Primary</button><br>
-                <button type="button" class="btn-raised btn-danger">Danger</button><br>
-                <button type="button" class="btn-raised btn-info">Info</button><br>
-                <button type="button" class="btn-raised btn-warning">Warning</button><br>
-                <button type="button" class="btn-raised btn-success">Success</button><br>
-                <button type="button" class="btn-raised" disabled>Disabled</button>
-            </div>
-            <div class="pull-left ml">
-                <h3>With links</h3>
-                <a href="#!" type="button" class="btn-raised ripple-primary">Raised</a><br>
-                <a href="#!" type="button" class="btn-raised btn-primary">Primary</a><br>
-                <a href="#!" type="button" class="btn-raised btn-danger">Danger</a><br>
-                <a href="#!" type="button" class="btn-raised btn-info">Info</a><br>
-                <a href="#!" type="button" class="btn-raised btn-warning">Warning</a><br>
-                <a href="#!" type="button" class="btn-raised btn-success">Success</a><br>
-                <a href="#!" type="button" class="btn" disabled>disabled</a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div id="shadows">
-            <h1>Shadows</h1>
-            <div>
-                <div class="shadow-1"></div>
-                <div class="shadow-2"></div>
-                <div class="shadow-3"></div>
-                <div class="shadow-4"></div>
-                <div class="shadow-5"></div>
-            </div>
-        </div>
-
-        <hr>
-
-        <div id="lists">
-            <h2>Lists</h2>
-
-            <div class="list">
-                <div class="list-header">List header</div>
-                <div class="list-item">This is a list item</div>
-                <div class="list-item">And another one</div>
-                <div class="list-item">And another one</div>
-                <a href="#!" class="list-item ripple-primary">With a link this time</a>
-                <a href="#!" class="list-item ripple-primary">And another link</a>
-                <a href="#!" class="list-item ripple-primary">
-                    <div class="pull-right">Even blocks!</div>
-                    <div>Inside a link, you can put whatever you want.</div>
-                    <div><button type="button" id="buttonInList" disabled class="btn-raised btn-success mm">But avoid other clickable elements...</button></div>
-                </a>
-                <div class="list-item">
-                    <a href="#!">This time the link is inside the list-item</a>
-                </div>
-            </div>
-        </div>
-
-        <div id="popups" style="position:relative;">
-            <h2>Popups</h1>
-            <div>
+        <section id="intro">
+            <div class="container">
+                <h1>Tiny Material CSS</h1>
                 <p>
-                    You only need to target the popup into the button via <code>data-popup="#amazing-popup"</code> if your popup has the id <b>amazing-popup</b> for example.
+                    This CSS toolbox embeds a few tools to facilitate the creation of a Material Design theme.<br>
+                    It's not a full CSS-framework like Bootstrap can be for example, so its purpose it not to replace those.
                 </p>
-                <button class="btn-raised mrm" type="button" data-popup="#amazing-popup">Click on me!</button>
-                <div id="amazing-popup" class="popup">
-                    <div class="popup-header">This is my popup's content.</div>
-                    <div class="popup-body">
-                        <div class="popup-content">You can put some content.<br>Or even a list!</div>
-                        <div class="list">
-                            <a href="#!" class="list-item ripple-danger">One</a>
-                            <a href="#!" class="list-item ripple-success">Two</a>
-                            <a href="#!" class="list-item ripple-primary">Three</a>
-                            <a href="#!" class="list-item ripple-warning popup-close">Close</a>
+                <p>
+                    Some of the tools (color system, checkboxes, radio buttons and switches) are taken directly from the <a href="http://materializecss.com/" rel="external" target="_blank">Materialize project</a>.
+                </p>
+            </div>
+        </section>
+        <section id="cards">
+            <div class="container">
+                <h2>Card</h2>
+                <div class="card">
+                    <div class="card-header">Classic card with header, body and footer</div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, quidem. Quidem iste ipsum quod sapiente mollitia facilis incidunt neque magnam magni quae eius beatae, at? Voluptatem velit veniam est. Alias.
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn-raised btn-info">Save</button>
+                        <button type="button" class="btn text-info">Cancel</button>
+                    </div>
+                </div>
+                <div class="card-side">
+                    <div class="card-left" style="min-width:200px">
+                        <div style="width:100%px;height:300px;background:url(img/left.jpg) no-repeat center center;background-size:cover;"></div>
+                    </div>
+                    <div class="card-middle">
+                        <div class="card-header">Card with left content</div>
+                        <div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui reprehenderit illum accusantium quos possimus at amet. Eaque voluptates, sequi reprehenderit eius odio alias minus et voluptas ipsa facilis? Mollitia, quidem.</div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-raised btn-danger">Delete</button>
+                            <button type="button" class="btn text-danger">Cancel</button>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
-
-                <button class="btn-raised btn-info" type="button" data-popup='#list-popup'>List of options</button>
-                <div id="list-popup" class="popup">
-                    <div class="list">
-                        <a href="#!" class="list-item ripple-primary popup-close">Save</a>
-                        <a href="#!" class="list-item ripple-primary popup-close">Edit</a>
-                        <a href="#!" class="list-item ripple-primary popup-close">Quit</a>
-                        <a href="#!" class="list-item ripple-primary popup-close">Cancel</a>
+                <div class="card-side">
+                    <div class="card-middle">
+                        <div class="card-header">Card with right content</div>
+                        <div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat itaque eos porro in aliquam, voluptatibus, ratione nesciunt non. Reiciendis deleniti rerum unde cupiditate aliquam consectetur perferendis facilis doloribus laboriosam pariatur!</div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-raised btn-primary">See more</button>
+                            <button type="button" class="btn text-primary">Go back</button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="card-right" style="min-width:200px;">
+                        <div style="width:100%px;height:300px;background:url(img/right.jpg) no-repeat center center;background-size:cover;"></div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section id="buttons">
+            <div class="container">
+                <h2>Buttons</h2>
+                <div class="row"></div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Flat</h3>
+                        <button type="button" class="btn ripple-primary">Primary</button><br>
+                        <button type="button" class="btn ripple-danger">Danger</button><br>
+                        <button type="button" class="btn ripple-info">Info</button><br>
+                        <button type="button" class="btn ripple-warning">Warning</button><br>
+                        <button type="button" class="btn ripple-success">Success</button><br>
+                        <button type="button" class="btn" disabled>Disabled</button>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Flat with text color</h3>
+                        <button type="button" class="btn text-primary">Primary</button><br>
+                        <button type="button" class="btn text-secondary">Secondary</button><br>
+                        <button type="button" class="btn text-danger">Danger</button><br>
+                        <button type="button" class="btn text-info">Info</button><br>
+                        <button type="button" class="btn text-warning">Warning</button><br>
+                        <button type="button" class="btn text-success">Success</button><br>
+                        <button type="button" class="btn text-danger" disabled>Disabled</button>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Flat with color</h3>
+                        <button type="button" class="btn btn-primary">Primary</button><br>
+                        <button type="button" class="btn btn-danger">Danger</button><br>
+                        <button type="button" class="btn btn-info">Info</button><br>
+                        <button type="button" class="btn btn-warning">Warning</button><br>
+                        <button type="button" class="btn btn-success">Success</button><br>
+                        <button type="button" class="btn btn-primary" disabled>Disabled</button>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Raised with color</h3>
+                        <button type="button" class="btn-raised ripple-primary">Raised</button><br>
+                        <button type="button" class="btn-raised btn-primary">Primary</button><br>
+                        <button type="button" class="btn-raised btn-danger">Danger</button><br>
+                        <button type="button" class="btn-raised btn-info">Info</button><br>
+                        <button type="button" class="btn-raised btn-warning">Warning</button><br>
+                        <button type="button" class="btn-raised btn-success">Success</button><br>
+                        <button type="button" class="btn-raised" disabled>Disabled</button>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>With links</h3>
+                        <a href="#!" type="button" class="btn-raised ripple-primary">Raised</a><br>
+                        <a href="#!" type="button" class="btn-raised btn-primary">Primary</a><br>
+                        <a href="#!" type="button" class="btn-raised btn-danger">Danger</a><br>
+                        <a href="#!" type="button" class="btn-raised btn-info">Info</a><br>
+                        <a href="#!" type="button" class="btn-raised btn-warning">Warning</a><br>
+                        <a href="#!" type="button" class="btn-raised btn-success">Success</a><br>
+                        <a href="#!" type="button" class="btn-raised" disabled>disabled</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="ripples">
+            <div class="container">
+                <h2>Ripples</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button type="button" class="btn ripple-primary">Primary</button><br>
+                        <button type="button" class="btn ripple-secondary">Secondary</button><br>
+                        <button type="button" class="btn ripple-danger">Danger</button><br>
+                        <button type="button" class="btn ripple-info">Info</button><br>
+                        <button type="button" class="btn ripple-warning">Warning</button><br>
+                        <button type="button" class="btn ripple-success">Success</button><br>
+                        <button type="button" class="btn" disabled>Disabled</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="shadows">
+            <div class="container">
+                <h1>Shadows</h1>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="container-shadows">
+                            <div class="shadow-1"></div>
+                            <div class="shadow-2"></div>
+                            <div class="shadow-3"></div>
+                            <div class="shadow-4"></div>
+                            <div class="shadow-5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+<pre><code class="html">&lt;div class=&quot;shadow-1&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;shadow-2&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;shadow-3&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;shadow-4&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;shadow-5&quot;&gt;&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="lists">
+            <div class="container">
+                <h2>Lists</h2>
+                <div class="list">
+                    <div class="list-header">List header</div>
+                    <div class="list-item">This is a list item</div>
+                    <div class="list-item">And another one</div>
+                    <div class="list-item">And another one</div>
+                    <a href="#!" class="list-item ripple-primary">With a link this time</a>
+                    <a href="#!" class="list-item ripple-primary">And another link</a>
+                    <a href="#!" class="list-item ripple-primary">
+                        <div class="pull-right">Even blocks!</div>
+                        <div>Inside a link, you can put whatever you want.</div>
+                        <div><button type="button" id="buttonInList" disabled class="btn-raised btn-success mm">But avoid other clickable elements...</button></div>
+                    </a>
+                    <div class="list-item">
+                        <a href="#!">This time the link is inside the list-item</a>
+                    </div>
+                </div>
+<pre><code class="html">&lt;div class=&quot;list&quot;&gt;
+    &lt;div class=&quot;list-header&quot;&gt;List header&lt;/div&gt;
+    &lt;div class=&quot;list-item&quot;&gt;This is a list item&lt;/div&gt;
+    &lt;div class=&quot;list-item&quot;&gt;And another one&lt;/div&gt;
+    &lt;div class=&quot;list-item&quot;&gt;And another one&lt;/div&gt;
+    &lt;a href=&quot;#!&quot; class=&quot;list-item ripple-primary&quot;&gt;With a link this time&lt;/a&gt;
+    &lt;a href=&quot;#!&quot; class=&quot;list-item ripple-primary&quot;&gt;And another link&lt;/a&gt;
+    &lt;a href=&quot;#!&quot; class=&quot;list-item ripple-primary&quot;&gt;
+        &lt;div class=&quot;pull-right&quot;&gt;Even blocks!&lt;/div&gt;
+        &lt;div&gt;Inside a link, you can put whatever you want.&lt;/div&gt;
+        &lt;div&gt;&lt;button type=&quot;button&quot; id=&quot;buttonInList&quot; disabled class=&quot;btn-raised btn-success mm&quot;&gt;But avoid other clickable elements...&lt;/button&gt;&lt;/div&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;list-item&quot;&gt;
+        &lt;a href=&quot;#!&quot;&gt;This time the link is inside the list-item&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+        <section id="popups" style="position:relative;">
+            <div class="container">
+                <h2>Popups</h2>
+                <div>
+                    <p>
+                        You only need to target the popup into the button via <code>data-popup="#amazing-popup"</code> if your popup has the id <b>amazing-popup</b> for example.
+                    </p>
+                    <button class="btn-raised mrm" type="button" data-popup="#amazing-popup">Click on me!</button>
+                    <div id="amazing-popup" class="popup">
+                        <div class="popup-header">This is my popup's content.</div>
+                        <div class="popup-body">
+                            <div class="popup-content">You can put some content.<br>Or even a list!</div>
+                            <div class="list">
+                                <a href="#!" class="list-item ripple-danger">One</a>
+                                <a href="#!" class="list-item ripple-success">Two</a>
+                                <a href="#!" class="list-item ripple-primary">Three</a>
+                                <a href="#!" class="list-item ripple-warning popup-close">Close</a>
+                            </div>
+                        </div>
+                    </div>
 
-                <pre>
-&lt;button class="btn-raised" type="button" data-popup="#amazing-popup"&gt;Click on me!&lt;/button&gt;
+                    <button class="btn-raised btn-info" type="button" data-popup='#list-popup'>List of options</button>
+                    <div id="list-popup" class="popup">
+                        <div class="list">
+                            <a href="#!" class="list-item ripple-primary popup-close">Save</a>
+                            <a href="#!" class="list-item ripple-primary popup-close">Edit</a>
+                            <a href="#!" class="list-item ripple-primary popup-close">Quit</a>
+                            <a href="#!" class="list-item ripple-primary popup-close">Cancel</a>
+                        </div>
+                    </div>
+
+                    
+<pre><code class="html">&lt;button class="btn-raised" type="button" data-popup="#amazing-popup"&gt;Click on me!&lt;/button&gt;
 &lt;div id="amazing-popup" class="popup"&gt;
     &lt;div class="popup-header"&gt;This is my popup's content.&lt;/div&gt;
     &lt;div class="popup-body"&gt;
@@ -221,127 +337,139 @@
             &lt;a href="#!" class="list-item ripple-primary"&gt;Three&lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-                </pre>
-            </div>
-        </div>
-
-        <div id="modal">
-            <h2>Modals</h1>
-            <p>Modals are elements which appear on top of everything else.</p>
-            <div>
-                <button class="btn-raised btn-primary mrm" type="button" data-modal="#amazing-modal">Open a modal window</button>
-                <div id="amazing-modal" class="modal">
-                    <div class="modal-header">Modal header</div>
-                    <div class="modal-body">This is my body.</div>
-                    <div class="modal-footer">
-                        <button class="btn ripple-primary" type="button" data-close="#amazing-modal">Save</button>
-                        <button class="btn" type="button" data-close="#amazing-modal">Cancel</button>
-                    </div>
+&lt;/div&gt;</code></pre>
+                    
                 </div>
             </div>
-        </div>
-
-        <div id="forms">
-            <h2>Forms</h2>
-            <div class="card">
-                <div class="card-header">Form</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="input-1">Username</label>
-                                <input type="text" id="input-1" placeholder="What is your username?">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-2">Password</label>
-                                <input type="password" id="input-2" placeholder="Try your password...">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-6">Disabled</label>
-                                <input type="text" id="input-6" placeholder="Nothing to do here..." value="This is disabled" disabled>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="input-3">Name</label>
-                                <input type="text" id="input-3" placeholder="Type your name...">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-4">Comment</label>
-                                <textarea id="input-4" rows="5" placeholder="What do you think about this?"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h3>Checkboxes</h3>
-                            <p>
-                                <input type="checkbox" id="test5" />
-                                <label for="test5">Red</label>
-                            </p>
-                            <p>
-                                <input type="checkbox" id="test6" checked="checked" />
-                                <label for="test6">Yellow</label>
-                            </p>
-                            <p>
-                                <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                                <label for="filled-in-box">Filled in</label>
-                            </p>
-                            <p>
-                                <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
-                                <label for="test7">Green</label>
-                            </p>
-                            <p>
-                                <input type="checkbox" id="test8" disabled="disabled" />
-                                <label for="test8">Brown</label>
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Radio buttons</h3>
-                            <p>
-                                <input name="group1" type="radio" id="test1" />
-                                <label for="test1">Red</label>
-                            </p>
-                            <p>
-                                <input name="group1" type="radio" id="test2" />
-                                <label for="test2">Yellow</label>
-                            </p>
-                            <p>
-                                <input class="with-gap" name="group1" type="radio" id="test3"  />
-                                <label for="test3">Green</label>
-                            </p>
-                            <p>
-                                <input name="group1" type="radio" id="test4" disabled="disabled" />
-                                <label for="test4">Brown</label>
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Switches</h3>
-                            <!-- Switch -->
-                            <div class="switch mbm">
-                                <label>
-                                    Off
-                                    <input type="checkbox" checked>
-                                    <span class="lever"></span>
-                                    On
-                                </label>
-                            </div>
-
-                            <!-- Disabled Switch -->
-                            <div class="switch">
-                                <label>
-                                    Off
-                                    <input disabled type="checkbox">
-                                    <span class="lever"></span>
-                                    On
-                                </label>
-                            </div>
+        </section>
+        <section id="modal">
+            <div class="container">
+                <h2>Modals</h2>
+                <p>Modals are elements which appear on top of everything else.</p>
+                <div>
+                    <button class="btn-raised btn-primary mrm" type="button" data-modal="#amazing-modal">Open a modal window</button>
+                    <div id="amazing-modal" class="modal">
+                        <div class="modal-header">Modal header</div>
+                        <div class="modal-body">This is my body.</div>
+                        <div class="modal-footer">
+                            <button class="btn ripple-primary" type="button" data-close="#amazing-modal">Save</button>
+                            <button class="btn" type="button" data-close="#amazing-modal">Cancel</button>
                         </div>
                     </div>
                 </div>
+<pre><code class="html">&lt;button class=&quot;btn-raised btn-primary mrm&quot; type=&quot;button&quot; data-modal=&quot;#amazing-modal&quot;&gt;Open a modal window&lt;/button&gt;
+&lt;div id=&quot;amazing-modal&quot; class=&quot;modal&quot;&gt;
+    &lt;div class=&quot;modal-header&quot;&gt;Modal header&lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;This is my body.&lt;/div&gt;
+    &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button class=&quot;btn ripple-primary&quot; type=&quot;button&quot; data-close=&quot;#amazing-modal&quot;&gt;Save&lt;/button&gt;
+        &lt;button class=&quot;btn&quot; type=&quot;button&quot; data-close=&quot;#amazing-modal&quot;&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
             </div>
-        </div>
+        </section>
+        <section id="forms">
+            <div class="container">
+                <h2>Forms</h2>
+                <div class="card">
+                    <div class="card-header">Form</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="input-1">Username</label>
+                                    <input type="text" id="input-1" placeholder="What is your username?">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-2">Password</label>
+                                    <input type="password" id="input-2" placeholder="Try your password...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-6">Disabled</label>
+                                    <input type="text" id="input-6" placeholder="Nothing to do here..." value="This is disabled" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="input-3">Name</label>
+                                    <input type="text" id="input-3" placeholder="Type your name...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-4">Comment</label>
+                                    <textarea id="input-4" rows="5" placeholder="What do you think about this?"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h3>Checkboxes</h3>
+                                <p>
+                                    <input type="checkbox" id="test5" />
+                                    <label for="test5">Red</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="test6" checked="checked" />
+                                    <label for="test6">Yellow</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                    <label for="filled-in-box">Filled in</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+                                    <label for="test7">Green</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="test8" disabled="disabled" />
+                                    <label for="test8">Brown</label>
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <h3>Radio buttons</h3>
+                                <p>
+                                    <input name="group1" type="radio" id="test1" checked />
+                                    <label for="test1">Red</label>
+                                </p>
+                                <p>
+                                    <input name="group1" type="radio" id="test2" />
+                                    <label for="test2">Yellow</label>
+                                </p>
+                                <p>
+                                    <input class="with-gap" name="group1" type="radio" id="test3"  />
+                                    <label for="test3">Green</label>
+                                </p>
+                                <p>
+                                    <input name="group1" type="radio" id="test4" disabled="disabled" />
+                                    <label for="test4">Brown</label>
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <h3>Switches</h3>
+                                <!-- Switch -->
+                                <div class="switch mbm">
+                                    <label>
+                                        Off
+                                        <input type="checkbox" checked>
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </div>
+
+                                <!-- Disabled Switch -->
+                                <div class="switch">
+                                    <label>
+                                        Off
+                                        <input disabled type="checkbox">
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

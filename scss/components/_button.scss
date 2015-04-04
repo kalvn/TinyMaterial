@@ -14,6 +14,10 @@ $heightButton: 36px;
     }
 }
 
+@mixin text-color($color){
+    color: darken($color, 5%);
+}
+
 // Flat button used as a base for others.
 .btn-base{
     @extend .nowrap;
@@ -115,3 +119,22 @@ $heightButton: 36px;
     @include btn-color($color-success);
 }
 
+// Text-colored buttons.
+.text-primary{
+    @include text-color($color-primary);
+}
+.text-secondary{
+    @include text-color($color-secondary);
+}
+.text-danger{
+    @include text-color($color-danger);
+}
+.text-info{
+    @include text-color($color-info);
+}
+.text-warning{
+    @include text-color($color-warning);
+}
+.text-success{
+    @include text-color($color-success);
+}
