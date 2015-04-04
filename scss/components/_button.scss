@@ -25,17 +25,17 @@ $heightButton: 36px;
     padding: $paddingButton;
 
     border: none;
-    border-radius: $componentRadius;
+    border-radius: $component-radius;
     outline: 0;
 
-    background-color: $colorTransparent;
+    background-color: $color-transparent;
     
     font-weight: bold;
     font-size: 14px;
-    font-family: $fontStack; // Needed for Firefox.
+    font-family: $font-stack; // Needed for Firefox.
     text-transform: uppercase;
     text-decoration: none;
-    color: $colorText;
+    color: $color-text;
     text-align: center;
 
     cursor: pointer;
@@ -55,7 +55,7 @@ $heightButton: 36px;
 
     &:hover,
     &:focus{
-        background-color: rgba(153, 153, 153, 0.2);
+        background-color: $color-button-hover;
     }
 
     &[disabled]{
@@ -63,8 +63,8 @@ $heightButton: 36px;
         &:hover,
         &:focus,
         &:active{
-            color: rgba(#000, .26);
-            background-color: $colorTransparent;
+            color: $color-button-disabled;
+            background-color: $color-transparent;
         }
     }
 }
@@ -92,26 +92,26 @@ $heightButton: 36px;
         &:active{
             @extend .shadow-btn;
 
-            color: rgba(#000, .26);
-            background-color: rgba(#000, .12);
+            color: $color-button-raised-disabled-text;
+            background-color: $color-button-raised-disabled;
         }
     }
 }
 
 // Colored buttons.
 .btn-primary{
-    @include btn-color($colorPrimary);
+    @include btn-color($color-primary);
 }
 .btn-danger{
-    @include btn-color($colorDanger);
+    @include btn-color($color-danger);
 }
 .btn-info{
-    @include btn-color($colorInfo);
+    @include btn-color($color-info);
 }
 .btn-warning{
-    @include btn-color($colorWarning);
+    @include btn-color($color-warning);
 }
 .btn-success{
-    @include btn-color($colorSuccess);
+    @include btn-color($color-success);
 }
 

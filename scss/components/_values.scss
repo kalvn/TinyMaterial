@@ -1,26 +1,56 @@
-$spaceT: 5px;
-$spaceS: 10px;
-$spaceM: 15px;
-$spaceL: 30px;
+$space-t: 5px;
+$space-s: 10px;
+$space-m: 15px;
+$space-l: 30px;
 
-$fontStack: 'Roboto', sans-serif;
+$font-stack: 'Roboto', sans-serif;
 
 
 // Colors.
-$lightGray: #eee;
-$whiteGray: #f2f2f2;
-$mediumGray: #999;
+$color-primary: color("blue-grey", "base");
+$color-secondary: color("light-blue", "base");
+$color-danger: color("red", "darken-1");
+$color-info: color("blue", "base");
+$color-warning: color("orange", "base");
+$color-success: color("green", "base");
 
-$colorPrimary: #607D8B;
-$colorDanger: #F44336;
-$colorInfo: #2196F3;
-$colorWarning: #FF9800;
-$colorSuccess: #4CAF50;
+$color-grey-medium: color("grey", "base");
 
-$colorText: #333;
-$colorTransparent: rgba(255, 255, 255, 0);
-$colorForm: #009688;
+$color-text: color("grey", "darken-4");
+$color-transparent: rgba(255, 255, 255, 0);
 
 
-// Radius.
-$componentRadius: 2px;
+
+// Components globals.
+$component-radius: 2px;
+$color-component-inner-border: color("grey", "lighten-3");
+$color-component-footer: color("grey", "lighten-4");
+
+// FORMS //
+$color-form-active: color("teal", "base");
+
+$color-form-border: color("grey", "lighten-2");
+$color-form-background: color("shades", "transparent");
+$color-form-disabled-border: color("grey", "lighten-3");
+$color-form-disabled: color("grey", "lighten-3");
+$color-form-placeholder: color("grey", "lighten-1");
+
+// Buttons.
+$color-button-disabled: rgba(#000, .26);
+$color-button-hover: rgba(153, 153, 153, 0.2);
+$color-button-focus: $color-button-hover;
+$color-button-raised-disabled: rgba(#000, .12);
+$color-button-raised-disabled-text: rgba(#000, .26);
+
+// Radio Buttons
+$radio-fill-color: $color-form-active !default;
+$radio-empty-color: #5a5a5a !default;
+$color-radio-disabled: color("grey", "lighten-1");
+// Checkboxes
+$color-checkbox-disabled: $color-radio-disabled;
+// Switches
+$color-switch-disabled: $color-radio-disabled;
+$switch-bg-color: $color-form-active !default;
+$switch-checked-lever-bg: desaturate(lighten($color-form-active, 25%), 50%) !default;
+$switch-unchecked-bg: #F1F1F1 !default;
+$switch-unchecked-lever-bg: #818181 !default;

@@ -1,18 +1,10 @@
-*{
-    box-sizing: border-box;
-}
-html{
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
+@import 'components/color';
 @import 'components/fonts';
 @import 'components/values';
-@import 'components/helpers';
-
 @import 'components/shadow';
+
+@import 'components/global';
+@import 'components/helpers';
 
 @import 'components/card';
 @import 'components/list';

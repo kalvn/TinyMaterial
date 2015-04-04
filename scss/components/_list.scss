@@ -5,7 +5,7 @@
 .list-header{
     @extend .component-header;
 
-    border-bottom: 1px solid $lightGray;
+    border-bottom: 1px solid $color-component-inner-border;
 }
 
 .list-item{
@@ -13,11 +13,11 @@
     position: relative;
     overflow: hidden;
 
-    padding: $spaceM;
+    padding: $space-m;
 
     background-color: #fff;
 
-    border-bottom: 1px solid $lightGray;
+    border-bottom: 1px solid $color-component-inner-border;
 
     &:last-child{
         border: none;
@@ -25,24 +25,24 @@
 
     // Lists inside popups are more dense.
     .popup &{
-        padding: $spaceS;
+        padding: $space-s;
     }
 }
 
 a.list-item{
-    color: $colorText;
+    color: $color-text;
     text-decoration: none;
 
     &:hover,
     &:focus{
         background-color: darken(#fff, 8%);
-        color: $colorText;
+        color: $color-text;
         text-decoration: none;
     }
 
     &:active{
         background-color: darken(#fff, 16%);
-        color: $colorText;
+        color: $color-text;
         text-decoration: none;
     }
 }

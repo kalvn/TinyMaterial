@@ -48,17 +48,20 @@
     @include ripple-color(#fff);
 }
 .ripple-primary{
-    @include ripple-color($colorPrimary);
+    @include ripple-color($color-primary);
+}
+.ripple-secondary{
+    @include ripple-color($color-secondary);
 }
 .ripple-danger{
-    @include ripple-color($colorDanger);
+    @include ripple-color($color-danger);
 }
 .ripple-info{
-    @include ripple-color($colorInfo);
+    @include ripple-color($color-info);
 }
 .ripple-warning{
-    @include ripple-color($colorWarning);
+    @include ripple-color($color-warning);
 }
 .ripple-success{
-    @include ripple-color($colorSuccess);
+    @include ripple-color($color-success);
 }

@@ -1,21 +1,21 @@
 .card{
     background: #fff;
-    border-radius: $componentRadius;
+    border-radius: $component-radius;
     @extend .shadow-1;
 
     &-header{
-        border-bottom: 1px solid $lightGray;
+        border-bottom: 1px solid $color-component-inner-border;
         @extend .component-header;
     }
 
     &-body{
-        padding: $spaceM;
+        padding: $space-m;
     }
 
     &-footer{
         @extend .component-footer;
 
-        border-top: 1px solid $lightGray;
-        background-color: $whiteGray;
+        border-top: 1px solid $color-component-inner-border;
+        background-color: $color-component-footer;
     }
 }

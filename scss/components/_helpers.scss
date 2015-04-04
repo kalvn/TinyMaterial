@@ -6,11 +6,11 @@
 
 .small{
     font-size: .8rem;
-    color: $mediumGray;
+    color: $color-grey-medium;
 }
 
 .component-header{
-    padding: $spaceM;
+    padding: $space-m;
 
     background-color: #fff;
 
@@ -20,15 +20,15 @@
 }
 
 .component-body{
-    padding: $spaceM;
+    padding: $space-m;
 }
 
 .component-footer{
-    padding: $spaceM;
+    padding: $space-m;
     overflow: hidden;
 
     .btn-base{
         float: right;
-        margin-left: $spaceS;
+        margin-left: $space-s;
     }
 }
