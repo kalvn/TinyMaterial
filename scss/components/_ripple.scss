@@ -44,6 +44,10 @@
     animation: ripple-animation 2s;
 }
 
+.ripple-effect.stop-animation{
+    animation: none !important;
+}
+
 .ripple{
     @include ripple-color(#fff);
 }

@@ -4,7 +4,9 @@
 /assets/lib
 /db
 /node_modules
+/bower_components
 .DS_STORE
 composer.lock
 *.sublime-workspace
 *.sublime-project
+*.log

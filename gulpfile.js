@@ -13,7 +13,8 @@ var gulp = require("gulp"),
     rename    = require('gulp-rename'),
     autoprefixer  = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    uglify = require('gulp-uglify');
 
 var onError = function(err){
     console.log(err.toString());
@@ -38,10 +39,22 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(dest.styles));
 });
 
+gulp.task('scripts', function () {
+    return gulp.src(paths.scripts)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(concat('tinymaterial.js'))
+        .pipe(gulp.dest(dest.scripts))
+        .pipe(uglify())
+        .pipe(rename('tinymaterial.min.js'))
+        .pipe(gulp.dest(dest.scripts));
+});
+
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-    // gulp.watch(paths.scripts, ['scripts']);
+    gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.styles, ['styles']);
 });
 
-gulp.task('default', ['watch', 'styles']);
+gulp.task('default', ['watch', 'styles', 'scripts']);

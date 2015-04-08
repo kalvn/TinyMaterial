@@ -1,10 +1,10 @@
 @keyframes modal-in {
     from {
-        top: -20px;
+        top: -50px;
         opacity: 0;
     }
     to {
-        top: 30px;
+        top: 0;
         opacity: 1;
     }
 }
@@ -22,29 +22,37 @@
 }
 
 .modal{
-    @extend .shadow-3;
+    z-index: 100;
+
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
 
     display: none;
     position: fixed;
-    top: 30px;
-    left: 50%;
-    margin-left: -250px;
-    width: 500px;
+    top: 0;
+    left: 0;
+    padding-top: 30px;
+
+    animation: modal-in .5s ease-out;
+}
+
+.modal-inner{
+    @extend .shadow-3;
 
     background-color: #fff;
     border-radius: $component-radius;
 
-    z-index: 100;
+    margin: auto;
+    z-index: 101;
+}
 
-    animation: modal-in .5s ease-out;
-
-    &-header{
-        @extend .component-header;
-    }
-    &-body{
-        @extend .component-body;
-    }
-    &-footer{
-        @extend .component-footer;
-    }
+.modal-header{
+    @extend .component-header;
+}
+.modal-body{
+    @extend .component-body;
+}
+.modal-footer{
+    @extend .component-footer;
 }

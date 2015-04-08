@@ -1,0 +1,35 @@
+{
+  "name": "tinymaterial",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kalvn/TinyMaterial",
+  "authors": [
+    "kalvn <kalvnthereal@gmail.com>"
+  ],
+  "description": "A tiny CSS library with Material Design components.",
+  "main": [
+    "dist/css/tinymaterial.min.css",
+    "dist/js/tinymaterial.min.js"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "material",
+    "design",
+    "tiny",
+    "css",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib"
+  ],
+  "dependencies": {
+    "jquery": "1.*"
+  }
+}
