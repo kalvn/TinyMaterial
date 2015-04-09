@@ -29,7 +29,7 @@ $color-component-footer: color("grey", "lighten-4");
 // FORMS //
 $color-form-active: color("teal", "base");
 
-$color-form-border: color("grey", "lighten-2");
+$color-form-border: color("grey", "lighten-1");
 $color-form-background: color("shades", "transparent");
 $color-form-disabled-border: color("grey", "lighten-2");
 $color-form-disabled: color("grey", "lighten-2");
@@ -43,9 +43,10 @@ $color-button-raised-disabled: rgba(#000, .12);
 $color-button-raised-disabled-text: rgba(#000, .26);
 
 // Radio Buttons
+$radio-label-color: $color-text;
 $radio-fill-color: $color-form-active !default;
 $radio-empty-color: #5a5a5a !default;
-$color-radio-disabled: color("grey", "lighten-1");
+$color-radio-disabled: color("grey", "base");
 // Checkboxes
 $color-checkbox-disabled: $color-radio-disabled;
 // Switches

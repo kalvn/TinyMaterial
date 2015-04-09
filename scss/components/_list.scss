@@ -1,5 +1,10 @@
 .list{
     @extend .shadow-1;
+
+    margin: $space-m 0;
+    padding: 0;
+
+    list-style: none;
 }
 
 .list-header{
@@ -29,7 +34,8 @@
     }
 }
 
-a.list-item{
+a.list-item,
+ul.list li.list-item > a{
     color: $color-text;
     text-decoration: none;
 
@@ -45,4 +51,10 @@ a.list-item{
         color: $color-text;
         text-decoration: none;
     }
+}
+
+ul.list li.list-item > a{
+    display: block;
+    margin: -$space-m;
+    padding: $space-m;
 }

@@ -12,6 +12,9 @@
             font-size: 15px;
             margin: 0;
             padding: 0;
+
+            font-weight: 400;
+            line-height: 1.5;
         }
         body{
             background-color: #ececec;
@@ -124,7 +127,7 @@
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="lib/highlight/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
-        <script type="text/javascript" src="dist/js/tinymaterial.min.js"></script>
+        <script type="text/javascript" src="dist/js/tinymaterial.js"></script>
     </head>
     <body>
         <section id="intro" class="shadow-1">
@@ -301,6 +304,13 @@
                         <a href="#!">This time the link is inside the list-item</a>
                     </div>
                 </div>
+                <div>
+                    <ul class="list">
+                        <li class="list-header">Even with ul and li</li>
+                        <li class="list-item">Test</li>
+                        <li class="list-item"><a href="#!">Link</a></li>
+                    </ul>
+                </div>
                 <div id="lists-code" class="modal">
                     <div class="modal-inner container">
                         <div class="row">
@@ -471,16 +481,29 @@
                                     <label for="test6">Yellow</label>
                                 </p>
                                 <p>
+                                    <input type="checkbox" class="filled-in" id="filled-in-box-2" />
+                                    <label for="filled-in-box-2">Filled in</label>
+                                </p>
+                                <p>
                                     <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
                                     <label for="filled-in-box">Filled in</label>
                                 </p>
+                                <h4>Disabled styles</h4>
                                 <p>
-                                    <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
-                                    <label for="test7">Green</label>
+                                    <input type="checkbox" id="test50" disabled />
+                                    <label for="test50">Red</label>
                                 </p>
                                 <p>
-                                    <input type="checkbox" id="test8" disabled="disabled" />
-                                    <label for="test8">Brown</label>
+                                    <input type="checkbox" id="test60" checked="checked" disabled/>
+                                    <label for="test60">Yellow</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="filled-in-box-20" disabled/>
+                                    <label for="filled-in-box-20">Filled in</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="filled-in-box0" checked="checked" disabled />
+                                    <label for="filled-in-box0">Filled in</label>
                                 </p>
                             </div>
                             <div class="col-md-4">
@@ -498,8 +521,25 @@
                                     <label for="test3">Green</label>
                                 </p>
                                 <p>
-                                    <input name="group1" type="radio" id="test4" disabled="disabled" />
+                                    <input class="with-gap" name="group1" type="radio" id="test4" />
                                     <label for="test4">Brown</label>
+                                </p>
+                                <h4>Disabled styles</h4>
+                                <p>
+                                    <input name="group2" type="radio" id="test1d" checked disabled />
+                                    <label for="test1d">Red</label>
+                                </p>
+                                <p>
+                                    <input name="group2" type="radio" id="test2d" disabled />
+                                    <label for="test2d">Yellow</label>
+                                </p>
+                                <p>
+                                    <input class="with-gap" name="group3" type="radio" id="test3d" disabled checked />
+                                    <label for="test3d">Green</label>
+                                </p>
+                                <p>
+                                    <input class="with-gap" name="group3" type="radio" id="test4d" disabled />
+                                    <label for="test4d">Brown</label>
                                 </p>
                             </div>
                             <div class="col-md-4">

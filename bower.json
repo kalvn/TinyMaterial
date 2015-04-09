@@ -27,7 +27,15 @@
     "bower_components",
     "test",
     "tests",
-    "lib"
+    "lib",
+    "img",
+    "js",
+    "scss",
+    "gulpfile.js",
+    "index.html",
+    "**/*.log",
+    "package.json",
+    "*.sublime-*"
   ],
   "dependencies": {
     "jquery": "1.*"

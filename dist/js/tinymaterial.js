@@ -1,4 +1,47 @@
 (function(window, $) {
+    // Global scope object.
+    window.tinymaterial = window.tinymaterial || {};
+    window.tinymaterial.updateRippleEffectHandler = function(){
+        // Removes previous handler to avoid duplicates.
+        $('.btn, .btn-raised, a.list-item, li > a, .ripple')
+            .off('mousedown.tinymaterialripple')
+            .not('[disabled]')
+            .on('mousedown.tinymaterialripple', window.tinymaterial.rippleEffectEvent);
+    };
+    // Creates the ripple effect directly as a jQuery event handler.
+    window.tinymaterial.rippleEffectEvent = function(event){
+        window.tinymaterial.rippleEffect(event, this);
+    };
+    // Creates the ripple effect on the specified element.
+    window.tinymaterial.rippleEffect = function(event, el){
+        var el = $(el);
+        var $div = $('<div/>'),
+            btnOffset = el.offset(),
+            xPos = event.pageX - btnOffset.left,
+            yPos = event.pageY - btnOffset.top;
+
+        $div.addClass('ripple-effect');
+
+        var $ripple = $(".ripple-effect");
+        $ripple.css("height", el.height());
+        $ripple.css("width", el.height());
+        $div.css({
+            top: yPos - ($ripple.height() / 2),
+            left: xPos - ($ripple.width() / 2),
+            background: el.data("ripple-color")
+        }).appendTo(el);
+
+        window.setTimeout(function() {
+            $div.remove();
+        }, 2000);
+    };
+    // Helper to hide running ripples on an element that gets hidden.
+    window.tinymaterial.terminateRipples = function(element){
+        $(element).find('.ripple-effect').addClass('stop-animation');
+    };
+
+    /********************/
+
     $(document).ready(function(){
         // Disables links which need to be.
         $('a[disabled]').on('click', function(event){
@@ -9,40 +52,7 @@
         });
 
         // Ripple effect.
-        $('.btn, .btn-raised, a.list-item').not('[disabled]').on('mousedown', function(event) {
-            //event.preventDefault();
-            //event.stopPropagation();
-            var $div = $('<div/>'),
-                btnOffset = $(this).offset(),
-                xPos = event.pageX - btnOffset.left,
-                yPos = event.pageY - btnOffset.top;
-
-            $div.addClass('ripple-effect');
-
-            var $ripple = $(".ripple-effect");
-            $ripple.css("height", $(this).height());
-            $ripple.css("width", $(this).height());
-            $div.css({
-                top: yPos - ($ripple.height() / 2),
-                left: xPos - ($ripple.width() / 2),
-                background: $(this).data("ripple-color")
-            }).appendTo($(this));
-
-            // $div.css({
-            //     top: yPos,
-            //     left: xPos,
-            //     background: $(this).data("ripple-color")
-            // }).appendTo($(this));
-
-            window.setTimeout(function() {
-                $div.remove();
-            }, 2000);
-        });
-
-        // Helper to hide running ripples on an element that gets hidden.
-        var terminateRipples = function(el){
-            $(el).find('.ripple-effect').addClass('stop-animation');
-        };
+        window.tinymaterial.updateRippleEffectHandler();
 
         // Popups.
         $('[data-popup]').on('click', function(event){
@@ -54,7 +64,7 @@
             if(popup.length > 0){
                 if(popup.is(':visible')){
                     popup.fadeOut(200, function(){
-                        terminateRipples(this);
+                        window.tinymaterial.terminateRipples(this);
                     });
                 } else{
                     // Hide other popups.
@@ -78,7 +88,7 @@
                 // Nothing to do.
             } else{
                 $('.popup').fadeOut(200, function(){
-                    terminateRipples(this);
+                    window.tinymaterial.terminateRipples(this);
                 });
             }
         });

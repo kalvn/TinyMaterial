@@ -8,9 +8,11 @@ $heightButton: 36px;
     &:hover,
     &:focus{
         background-color: darken($color, 5%);
+        color: #fff;
     }
     &:active{
         background-color: darken($color, 10%);
+        color: #fff;
     }
 }
 
@@ -44,6 +46,12 @@ $heightButton: 36px;
 
     cursor: pointer;
 
+    &:active,
+    &:active:focus{
+        outline: 0;
+        border: none;
+    }
+
     &[disabled]{
         pointer-events: none;
     }
@@ -59,7 +67,18 @@ $heightButton: 36px;
 
     &:hover,
     &:focus{
+        outline: 0;
+        border: none;
+
         background-color: $color-button-hover;
+        box-shadow: none;
+
+        color: $color-text;
+        text-decoration: none;
+    }
+
+    &:active{
+        box-shadow: none;
     }
 
     &[disabled]{
@@ -78,11 +97,17 @@ $heightButton: 36px;
     @extend .btn-base;
     @extend .shadow-btn;
 
-    background-color: rgba(#000, .12);
+    background-color: rgba(#000, .06);
     
     &:hover,
     &:focus{
         @extend .shadow-btn-hover;
+
+        outline: 0;
+        border: none;
+
+        color: $color-text;
+        text-decoration: none;
     }
 
     &:active{
