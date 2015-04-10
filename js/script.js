@@ -14,20 +14,32 @@
     };
     // Creates the ripple effect on the specified element.
     window.tinymaterial.rippleEffect = function(event, el){
+        var offsetX = (event.pageX - $(event.target).offset().left);
+        var offsetY = (event.pageY - $(event.target).offset().top);
+
+        // Compensate the offset shift when the click is done on an element within the element we want the ripple to be displayed on.
+        var getRealValues = function(element){
+            if(element == el || !element){
+                return;
+            }
+
+            offsetX += element.offsetLeft;
+            offsetY += element.offsetTop;
+
+            getRealValues(element.offsetParent);
+        }
+        getRealValues(event.target);
+
         var el = $(el);
-        var $div = $('<div/>'),
-            btnOffset = el.offset(),
-            xPos = event.pageX - btnOffset.left,
-            yPos = event.pageY - btnOffset.top;
+        var rippleDefaultDiameter = 50;
+        var $div = $('<div/>');
+
+        console.log(offsetX + ':' + offsetY);
 
         $div.addClass('ripple-effect');
-
-        var $ripple = $(".ripple-effect");
-        $ripple.css("height", el.height());
-        $ripple.css("width", el.height());
         $div.css({
-            top: yPos - ($ripple.height() / 2),
-            left: xPos - ($ripple.width() / 2),
+            top: offsetY - (rippleDefaultDiameter/2) + 'px',// - ($ripple.height() / 2),
+            left: offsetX - (rippleDefaultDiameter/2) + 'px',// - ($ripple.width() / 2),
             background: el.data("ripple-color")
         }).appendTo(el);
 
