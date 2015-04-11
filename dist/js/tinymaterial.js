@@ -34,8 +34,6 @@
         var rippleDefaultDiameter = 50;
         var $div = $('<div/>');
 
-        console.log(offsetX + ':' + offsetY);
-
         $div.addClass('ripple-effect');
         $div.css({
             top: offsetY - (rippleDefaultDiameter/2) + 'px',// - ($ripple.height() / 2),

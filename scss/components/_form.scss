@@ -1,13 +1,11 @@
-*:after,
-*:before{
-    box-sizing: inherit;
-}
-
 .form-group{
     position: relative;
     margin-bottom: $space-m;
 }
 
+/**********/
+/* INPUTS */
+/**********/
 .input-base{
     display: block;
     width: 100%;
@@ -459,4 +457,28 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
 .switch label input[type=checkbox][disabled] + .lever:after,
 .switch label input[type=checkbox][disabled]:checked + .lever:after {
     background-color: $color-switch-disabled;
+}
+
+/**********/
+/* SELECT */
+/**********/
+select{
+    display: block;
+    width: 100%;
+    padding: 5px 5px;
+
+    border: 1px solid $color-form-border;
+
+    font-size: 16px;
+    font-family: $font-stack;
+
+    &:focus{
+        border-color: $color-form-active;
+        outline: none;
+    }
+
+    &:disabled{
+        border-color: $color-form-disabled-border;
+        color: $color-form-disabled;
+    }
 }
